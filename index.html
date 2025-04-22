@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript: Basic</title>
+  <style>
+    h3 {
+      color: black;
+    }
+    h4 {
+      color: maroon;
+    }
+  </style>
+</head>
+<body>
+<center>
+  <h3>JavaScript Program Solutions</h3>
+  <hr>
+
+  <div class="output"><h4>1. Print Name and Address</h4><pre id="q1"></pre></div>
+  <br>
+  <div class="output"><h4>2. Check Value and Data-Type</h4><pre id="q2"></pre></div>
+  <div class="output"><h4>3. Add Two Strings in Uppercase</h4><pre id="q3"></pre></div>
+  <div class="output"><h4>4. Convert String Length to Bytes</h4><pre id="q4"></pre></div>
+  <div class="output"><h4>5. Round a Number to Specific Digits</h4><pre id="q5"></pre></div>
+</center>
+
+<script>
+  document.getElementById("q1").textContent = `Name: Roshni\nAddress: Jamui, Bihar, India`;
+
+  let a = "5678", b = 1239;
+  document.getElementById("q2").textContent = `a = ${a} (${typeof a}), b = ${b} (${typeof b})
+ ${a === b}`;
+
+  let str1 = "Dairy", str2 = "Milk";
+  document.getElementById("q3").textContent = `Combined String: ${(str1 + str2).toUpperCase()}`;
+
+  document.getElementById("q4").textContent = `String: 'Roshni'\nBytes: ${new TextEncoder().encode("Roshni").length}`;
+
+  let original = 12.3789;
+  document.getElementById("q5").textContent = `Original: ${original}\nRounded to 3 digits: ${original.toFixed(3)}`;
+</script>
+</body>
+</html>

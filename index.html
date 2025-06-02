@@ -3,13 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript: Basic</title>
+  <title>JavaScript Fun!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    h3 {
-      color: black;
+    /* Global Styles */
+    body {
+      font-family: 'Quicksand', sans-serif; /* A friendly, rounded font */
+      margin: 0;
+      padding: 30px 20px; /* Comfy padding */
+      background-color: #e0f7fa; /* Very light, refreshing blue */
+      color: #333; /* Dark grey for general text */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      min-height: 100vh; /* Ensure body takes full viewport height */
+      box-sizing: border-box; /* Include padding in element's total width and height */
     }
+
+    /* Main Heading */
+    h3 {
+      font-family: 'Happy Monkey', cursive; /* Playful font for the main title */
+      font-size: 3em; /* Big and friendly */
+      color: #00bcd4; /* Vibrant cyan */
+      text-align: center;
+      margin-bottom: 25px; /* Space below title */
+      text-shadow: 1px 1px 0 #fff; /* Subtle white outline */
+    }
+
+    hr {
+      border: none;
+      border-top: 3px solid #80deea; /* Solid, light blue line */
+      width: 60%;
+      max-width: 400px;
+      margin-bottom: 40px; /* Space after the line */
+    }
+
+    /* Output Sections */
+    .output {
+      background-color: #ffffff; /* Clean white background */
+      border: 1px solid #b2ebf2; /* Very light blue border */
+      padding: 20px 25px; /* Comfy padding */
+      margin: 15px 0; /* Space between sections */
+      width: 100%;
+      max-width: 500px; /* Keeps sections well-contained */
+      border-radius: 10px; /* Softly rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 188, 212, 0.1); /* Subtle cyan-ish shadow */
+      text-align: left; /* Align text within sections */
+      box-sizing: border-box;
+      /* Removed the ::before heart emoji for simplicity and no-pink */
+    }
+
+    /* Section Titles (Numbers) */
     h4 {
-      color: maroon;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.5em; /* Clear question titles */
+      color: #00bcd4; /* Vibrant cyan again */
+      margin-top: 0;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #b2ebf2; /* Simple light blue separator */
+    }
+
+    /* Preformatted Text for Code/Output */
+    pre {
+      background-color: #f0f7fa; /* Even lighter blue for code block */
+      border: 1px solid #80deea; /* Thin light blue border */
+      padding: 10px 15px;
+      border-radius: 6px; /* Rounded code block */
+      font-family: 'monospace'; /* Keep code readable */
+      font-size: 0.95em;
+      line-height: 1.4;
+      color: #424242; /* Dark grey for code text */
+      white-space: pre-wrap; /* Allows text to wrap if long */
+      word-wrap: break-word; /* Breaks long words if necessary */
+    }
+
+    /* Adjust break tag for spacing (though ideally use margins/padding) */
+    br {
+      line-height: 15px; /* Gives some height to the <br> */
     }
   </style>
 </head>
@@ -19,7 +90,6 @@
   <hr>
 
   <div class="output"><h4>1. Print Name and Address</h4><pre id="q1"></pre></div>
-  <br>
   <div class="output"><h4>2. Check Value and Data-Type</h4><pre id="q2"></pre></div>
   <div class="output"><h4>3. Add Two Strings in Uppercase</h4><pre id="q3"></pre></div>
   <div class="output"><h4>4. Convert String Length to Bytes</h4><pre id="q4"></pre></div>
@@ -27,19 +97,22 @@
 </center>
 
 <script>
-  document.getElementById("q1").textContent = `Name: Roshni\nAddress: Jamui, Bihar, India`;
+  // Ensure DOM is loaded before trying to access elements
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("q1").textContent = `Name: Roshni\nAddress: Jamui, Bihar, India`;
 
-  let a = "5678", b = 1239;
-  document.getElementById("q2").textContent = `a = ${a} (${typeof a}), b = ${b} (${typeof b})
- ${a === b}`;
+    let a = "5678", b = 1239;
+    document.getElementById("q2").textContent = `a = ${a} (${typeof a}), b = ${b} (${typeof b})\nEquality Check (a === b): ${a === b}`;
 
-  let str1 = "Dairy", str2 = "Milk";
-  document.getElementById("q3").textContent = `Combined String: ${(str1 + str2).toUpperCase()}`;
+    let str1 = "Dairy", str2 = "Milk";
+    document.getElementById("q3").textContent = `Combined String: ${(str1 + str2).toUpperCase()}`;
 
-  document.getElementById("q4").textContent = `String: 'Roshni'\nBytes: ${new TextEncoder().encode("Roshni").length}`;
+    // TextEncoder is a modern Web API. Generally supported.
+    document.getElementById("q4").textContent = `String: 'Roshni'\nBytes (UTF-8 encoded): ${new TextEncoder().encode("Roshni").length}`;
 
-  let original = 12.3789;
-  document.getElementById("q5").textContent = `Original: ${original}\nRounded to 3 digits: ${original.toFixed(3)}`;
+    let original = 12.3789;
+    document.getElementById("q5").textContent = `Original: ${original}\nRounded to 3 decimal places: ${original.toFixed(3)}`;
+  });
 </script>
 </body>
 </html>
